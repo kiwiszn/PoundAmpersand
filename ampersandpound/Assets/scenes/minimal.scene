@@ -90,8 +90,8 @@
       "__guid": "3c2490ef-54a0-49bb-8f13-490e40aa51d1",
       "Flags": 0,
       "Name": "Cube",
-      "Position": "21.41682,74.1244,14.40159",
-      "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
+      "Position": "22.0024,74.96029,14.17592",
+      "Rotation": "-0.00000006275985,0.00000008544787,0.3059461,0.9520488",
       "Scale": "0.5632889,0.5632889,0.5632889",
       "Enabled": true,
       "NetworkMode": 2,
@@ -132,8 +132,8 @@
       "__guid": "523e3e8f-a4ec-4ec1-af9a-d86ffc9c17e1",
       "Flags": 0,
       "Name": "Cube (1)",
-      "Position": "40.81348,46.97572,14.40159",
-      "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
+      "Position": "41.43033,47.00432,14.17593",
+      "Rotation": "-0.00000001092168,0.00000006384168,0.3046313,0.9524704",
       "Scale": "0.5632889,0.5632889,0.5632889",
       "Enabled": true,
       "NetworkMode": 2,
@@ -174,8 +174,8 @@
       "__guid": "5b483a09-bbf2-4949-98c7-a73b789d0ee7",
       "Flags": 0,
       "Name": "Cube (2)",
-      "Position": "8.353642,53.1135,179.7381",
-      "Rotation": "0.00000001819328,-0.00000000000000008235059,0.3052325,0.952278",
+      "Position": "-50.03767,-20.58617,14.19664",
+      "Rotation": "-0.0002533125,0.000161787,-0.6628376,-0.7487632",
       "Scale": "0.5632889,0.5632889,0.5632889",
       "Enabled": true,
       "NetworkMode": 2,
@@ -225,6 +225,7 @@
       "Flags": 0,
       "Name": "Player",
       "Position": "-160,-33.41874,5.336229",
+      "Rotation": "0,0,0.5514268,0.8342233",
       "Enabled": true,
       "NetworkMode": 2,
       "NetworkInterpolation": true,
@@ -232,8 +233,9 @@
         {
           "__type": "Sandbox.SkinnedModelRenderer",
           "__guid": "ee172d9a-c30e-4eb5-81f9-69fad0a474f8",
-          "BodyGroups": 341,
+          "BodyGroups": 325,
           "CreateBoneObjects": false,
+          "MaterialGroup": "default",
           "Model": "models/citizen/citizen.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1",
@@ -284,6 +286,7 @@
             "go": "ea93b003-e697-4c3f-8613-3226b213ef66",
             "component_type": "CharacterController"
           },
+          "EyePosition": "0,0,0",
           "JumpStrength": 400,
           "RunSpeed": 250,
           "WalkSpeed": 120
@@ -294,8 +297,8 @@
           "__guid": "32a376c5-91f1-4be3-a160-099ccd2b372a",
           "Flags": 0,
           "Name": "Camera",
-          "Position": "-78.36655,-6.970245,70.32199",
-          "Rotation": "-0.004233554,0.152223,0.02747654,0.9879551",
+          "Position": "-90.29901,-6.970245,54.15335",
+          "Rotation": "-0.006836175,0.05725309,0.02694717,0.9979725",
           "Tags": "maincamera",
           "Enabled": true,
           "NetworkMode": 2,
@@ -317,6 +320,175 @@
               "Viewport": "0,0,1,1",
               "ZFar": 10000,
               "ZNear": 10
+            }
+          ]
+        },
+        {
+          "__guid": "2dfe20e2-8c5b-4ef8-83c4-946ff442a570",
+          "Flags": 0,
+          "Name": "Clothing - sleeveless_jumper",
+          "Position": "0,0,0",
+          "Tags": "clothing",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "c2d541af-1aea-45b8-92de-c3a682c805fb",
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": {
+                "_type": "component",
+                "component_id": "ee172d9a-c30e-4eb5-81f9-69fad0a474f8",
+                "go": "ea93b003-e697-4c3f-8613-3226b213ef66",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "CreateBoneObjects": false,
+              "Model": "models/citizen_clothes/jumper/sleeveless_jumper/models/sleeveless_jumper.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1",
+              "UseAnimGraph": true
+            }
+          ]
+        },
+        {
+          "__guid": "5f17b0bf-0588-42c0-b154-4870973e2c0a",
+          "Flags": 0,
+          "Name": "Clothing - eyelashes",
+          "Position": "0,0,0",
+          "Tags": "clothing",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "dfcca78d-7acc-439f-a091-dbc1f928f9d0",
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": {
+                "_type": "component",
+                "component_id": "ee172d9a-c30e-4eb5-81f9-69fad0a474f8",
+                "go": "ea93b003-e697-4c3f-8613-3226b213ef66",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "CreateBoneObjects": false,
+              "Model": "models/citizen_clothes/hair/eyelashes/models/eyelashes.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1",
+              "UseAnimGraph": true
+            }
+          ]
+        },
+        {
+          "__guid": "505a8aed-6c88-438f-8923-40faa271da69",
+          "Flags": 0,
+          "Name": "Clothing - eyebrows",
+          "Position": "0,0,0",
+          "Tags": "clothing",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "6dae28eb-252b-491b-b12f-68ee56ef2b67",
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": {
+                "_type": "component",
+                "component_id": "ee172d9a-c30e-4eb5-81f9-69fad0a474f8",
+                "go": "ea93b003-e697-4c3f-8613-3226b213ef66",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "CreateBoneObjects": false,
+              "Model": "models/citizen_clothes/hair/eyebrows/models/eyebrows.vmdl",
+              "RenderType": "On",
+              "Tint": "0.64599,0.4573,0.35912,1",
+              "UseAnimGraph": true
+            }
+          ]
+        },
+        {
+          "__guid": "8ef24d3d-038f-4f79-9d97-9592338acae7",
+          "Flags": 0,
+          "Name": "Clothing - hair_baldingbrown",
+          "Position": "0,0,0",
+          "Tags": "clothing",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "53688359-2554-49c0-a19f-826c56675603",
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": {
+                "_type": "component",
+                "component_id": "ee172d9a-c30e-4eb5-81f9-69fad0a474f8",
+                "go": "ea93b003-e697-4c3f-8613-3226b213ef66",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "CreateBoneObjects": false,
+              "Model": "models/citizen_clothes/hair/hair_balding/models/hair_baldingbrown.vmdl",
+              "RenderType": "On",
+              "Tint": "0.64178,0.31194,0.13582,1",
+              "UseAnimGraph": true
+            }
+          ]
+        },
+        {
+          "__guid": "9ef5fa96-22f4-43b6-b762-fe0c6ae85614",
+          "Flags": 0,
+          "Name": "Clothing - stubble",
+          "Position": "0,0,0",
+          "Tags": "clothing",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "c0c28a15-2978-4eb2-94bc-0588c4d8b81e",
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": {
+                "_type": "component",
+                "component_id": "ee172d9a-c30e-4eb5-81f9-69fad0a474f8",
+                "go": "ea93b003-e697-4c3f-8613-3226b213ef66",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "CreateBoneObjects": false,
+              "Model": "models/citizen_clothes/hair/stubble/model/stubble.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1",
+              "UseAnimGraph": true
+            }
+          ]
+        },
+        {
+          "__guid": "3d89b3c0-18e9-47ca-899f-b15e33e0b41c",
+          "Flags": 0,
+          "Name": "Clothing - jeans",
+          "Position": "0,0,0",
+          "Scale": "0,1,0",
+          "Tags": "clothing",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SkinnedModelRenderer",
+              "__guid": "7f3d3ddb-2899-49a4-9b13-3edef45044a2",
+              "BodyGroups": 18446744073709551615,
+              "BoneMergeTarget": {
+                "_type": "component",
+                "component_id": "ee172d9a-c30e-4eb5-81f9-69fad0a474f8",
+                "go": "ea93b003-e697-4c3f-8613-3226b213ef66",
+                "component_type": "SkinnedModelRenderer"
+              },
+              "CreateBoneObjects": false,
+              "Model": "models/citizen_clothes/jacket/longsleeve/models/jeans.vmdl",
+              "RenderType": "On",
+              "Tint": "1,1,1,1",
+              "UseAnimGraph": true
             }
           ]
         }
@@ -346,7 +518,7 @@
   },
   "Title": "minimal",
   "Description": "",
-  "LastSaved": "2024-06-30T12:51:32.9402355\u002B02:00",
+  "LastSaved": "2024-06-30T13:42:14.612713\u002B02:00",
   "ResourceVersion": 1,
   "__references": [],
   "__version": 1

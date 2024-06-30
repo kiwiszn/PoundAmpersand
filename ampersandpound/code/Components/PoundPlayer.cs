@@ -4,9 +4,9 @@ using Sandbox.Citizen;
 public sealed class PoundPlayer : Component
 {
 	[Property]
-	[Category("Components")]
-	public GameObject Camera {  get; set; }
-	
+	[Category( "Components" )]
+	public GameObject Camera { get; set; }
+
 	[Property]
 	[Category( "Components" )]
 	public CharacterController Controller { get; set; }
@@ -17,7 +17,7 @@ public sealed class PoundPlayer : Component
 
 	[Property]
 	[Category( "Stats" )]
-	[Range(0f, 400f, 1f	)]
+	[Range( 0f, 400f, 1f )]
 	public float WalkSpeed { get; set; } = 120f;
 
 	[Property]
@@ -32,7 +32,7 @@ public sealed class PoundPlayer : Component
 
 
 
-//Where the camera rotates around the aim originas from
+	//Where the camera rotates around the aim originas from
 
 
 	[Property]
@@ -54,7 +54,7 @@ public sealed class PoundPlayer : Component
 		Transform.Rotation = Rotation.FromYaw( EyeAngles.yaw );
 
 		if ( Camera != null )
-			Camera.Transform.Local = _initialCameraTransform.RotateAround( EyePosition, EyeAngles.WithYaw( 0f ));
+			Camera.Transform.Local = _initialCameraTransform.RotateAround( EyePosition, EyeAngles.WithYaw( 0f ) );
 	}
 	protected override void OnFixedUpdate()
 	{
@@ -68,13 +68,13 @@ public sealed class PoundPlayer : Component
 		Controller.Accelerate( wishVelocity );
 		if ( Controller.IsOnGround )
 		{
-			Controller.ApplyFriction( 5f );
+			Controller.ApplyFriction( 5f, 20f );
 			Controller.Acceleration = 10f;
 			if ( Input.Pressed( "Jump" ) )
 
 				Controller.Punch( Vector3.Up * JumpStrength );
 
-			if ( Animator != null)
+			if ( Animator != null )
 				Animator.TriggerJump();
 		}
 		else
@@ -86,10 +86,10 @@ public sealed class PoundPlayer : Component
 
 
 
-		if (Animator != null)
+		if ( Animator != null )
 		{
 			Animator.IsGrounded = Controller.IsOnGround;
-			Animator.WithVelocity(Controller.Velocity);
+			Animator.WithVelocity( Controller.Velocity );
 		}
 	}
 
@@ -97,8 +97,14 @@ public sealed class PoundPlayer : Component
 	{
 		if ( Camera != null )
 			_initialCameraTransform = Camera.Transform.Local;
-	}
 
+
+		if ( Components.TryGet<SkinnedModelRenderer>( out var model ))
+			{
+			var clothing = ClothingContainer.CreateFromLocalUser();
+			clothing.Apply( model );
+		 }
+	}
 	protected override void OnEnabled()
 	{
 		base.OnEnabled();
